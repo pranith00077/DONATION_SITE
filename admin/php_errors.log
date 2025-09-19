@@ -1,0 +1,80 @@
+[14-Sep-2025 20:47:41 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:47:41 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:48:54 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:48:54 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:49:09 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:49:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:49:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:58
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(58): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 58
+[14-Sep-2025 20:51:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:57
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(57): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 57
+[14-Sep-2025 20:51:48 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:57
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(57): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 57
+[14-Sep-2025 20:52:59 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 61
+[14-Sep-2025 20:52:59 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 61
+[14-Sep-2025 20:53:35 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 61
+[14-Sep-2025 20:54:39 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_album.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_album.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_album.php on line 61
+[14-Sep-2025 20:54:39 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_album.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_album.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_album.php on line 61
+[14-Sep-2025 20:56:02 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'album_id' in 'where clause' in C:\xampp1\htdocs\website\admin\get_albums.php:61
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(61): mysqli->prepare('SELECT image_pa...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 61
+[15-Sep-2025 10:20:30 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'file_path' in 'field list' in C:\xampp1\htdocs\website\admin\get_albums.php:41
+Stack trace:
+#0 C:\xampp1\htdocs\website\admin\get_albums.php(41): mysqli->query('SELECT id, file...')
+#1 {main}
+  thrown in C:\xampp1\htdocs\website\admin\get_albums.php on line 41

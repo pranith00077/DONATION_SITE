@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News & Updates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2a5f8a;
+      --accent-color: #3498db;
+      --text-color: #333;
+      --light-text: #777;
+      --bg-light: #f9f9f9;
+      --white: #ffffff;
+      --border-color: #ddd;
+      --shadow-light: rgba(0,0,0,0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      background-color: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px var(--shadow-light);
+    }
+
+    h1 {
+      font-family: 'Roboto', sans-serif;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px var(--shadow-light);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .news-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-content h2 {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .news-content p {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .news-meta {
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .no-news {
+      text-align: center;
+      color: var(--light-text);
+      font-size: 1.2rem;
+      padding: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Latest News & Updates</h1>
+    <div id="newsContainer" class="news-grid">
+      
+      <p class="no-news">Loading news...</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const newsContainer = document.getElementById('newsContainer');
+
+      function fetchNews() {
+        fetch('admin/get_news.php')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+          })
+          .then(newsItems => {
+            newsContainer.innerHTML = '';
+            if (newsItems.length > 0) {
+              newsItems.forEach(news => {
+                const newsCard = document.createElement('div');
+                newsCard.classList.add('news-card');
+
+                // Handle image path
+                let imageUrl = 'https://via.placeholder.com/400x200?text=No+Image';
+                if (news.image_path && news.image_path.trim() !== '') {
+                  imageUrl = news.image_path.startsWith('uploads/')
+                    ? news.image_path
+                    : 'uploads/news/' + news.image_path;
+                }
+
+                // Debug print
+                console.log('Image URL:', imageUrl);
+
+                // Build HTML
+                newsCard.innerHTML = `
+                  <img src="${imageUrl}" alt="${news.title}">
+                  <div class="news-content">
+                    <h2>${news.title}</h2>
+                    <p>${news.content.length > 150 ? news.content.substring(0, 150) + '...' : news.content}</p>
+                    <div class="news-meta">Published: ${news.published_at}</div>
+                  </div>
+                `;
+
+                newsContainer.appendChild(newsCard);
+              });
+            } else {
+              newsContainer.innerHTML = '<p class="no-news">No news articles found at the moment.</p>';
+            }
+          })
+          .catch(error => {
+            console.error('Error fetching news:', error);
+            newsContainer.innerHTML = '<p class="no-news">Failed to load news. Please try again later.</p>';
+          });
+      }
+
+      fetchNews();
+    });
+  </script>
+</body>
+</html>

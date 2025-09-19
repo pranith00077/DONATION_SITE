@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Loving Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x800');
+            background-size: cover;
+            background-position: center;
+        }
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+        }
+        .mission-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-white py-32">
+        <div class="container mx-auto px-6 text-center">
+            <img src="images/img/.jpg">
+            <h1 class="text-5xl font-bold mb-6">Our Story</h1>
+            <p class="text-xl max-w-2xl mx-auto">A journey of compassion, hope and transforming lives since 2005</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-16">
+        <!-- Introduction Section -->
+        <section class="mb-20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-600">Welcome to Asha Kiran</h2>
+                    <p class="text-lg mb-4">Founded in 2005, Asha Kiran is a sanctuary for abandoned children and elderly individuals who have nowhere else to turn. What began as a small shelter with just 5 children has blossomed into a loving home for 82 residents.</p>
+                    <p class="text-lg">Located in the outskirts of Bangalore, our 5-acre campus provides a nurturing environment where forgotten members of society find family, care and dignity.</p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="images/img/img5.jpg" alt="Exterior view of Asha Kiran campus showing the main building surrounded by gardens" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Story -->
+        <section class="mb-20 bg-white rounded-xl shadow-md p-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/3">
+                    <div class="founder-card bg-white p-6 rounded-lg shadow-lg transition duration-300">
+                        <img src="https://placehold.co/400x500" alt="Mrs. Lakshmi Reddy, founder of Asha Kiran" class="w-full rounded-lg mb-4">
+                        <h3 class="text-xl font-bold text-center">Mrs. Lakshmi Reddy</h3>
+                        <p class="text-gray-600 text-center">Founder & Director</p>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <h2 class="text-3xl font-bold mb-6 text-blue-600">The Heart Behind Our Home</h2>
+                    <p class="text-lg mb-4">Mrs. Lakshmi Reddy's vision for Asha Kiran was born from personal tragedy. After losing her own parents at a young age and later discovering abandoned elderly individuals during her nursing career, she felt called to create a bridge between generations that needed each other.</p>
+                    <p class="text-lg mb-4">In 2005, she sold her nursing home and used her life savings to purchase land and build the first shelter. What began with just 5 orphans and 2 elderly residents has grown exponentially through community support.</p>
+                    <blockquote class="border-l-4 border-blue-500 pl-4 italic my-6 text-lg">
+                        "These children and elders healed each other in ways I never imagined. The loneliness disappeared when they became family."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-blue-600">Our Journey</h2>
+            <div class="relative pl-12">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item relative mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/3">
+                                <img src="https://placehold.co/400x300" alt="Original small shelter building from 2005" class="rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-2">2005 - Humble Beginnings</h3>
+                                <p class="text-lg">Opened with just 5 children and 2 elderly residents in a rented house. Mrs. Reddy mortgaged her jewelry to cover the first year's expenses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item relative mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/3">
+                                <img src="https://placehold.co/400x300" alt="Construction of permanent campus in 2010" class="rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-2">2010 - Permanent Home</h3>
+                                <p class="text-lg">Purchased land and built our current campus through generous donations. Expanded capacity to house 50 residents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item relative mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/3">
+                                <img src="https://placehold.co/400x300" alt="Celebration at 10-year anniversary" class="rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-2">2015 - A Decade of Hope</h3>
+                                <p class="text-lg">Celebrated our 10th anniversary with 65 residents. Added vocational training programs for older children.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item relative">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="md:w-1/3">
+                                <img src="https://placehold.co/400x300" alt="Current group photo of residents" class="rounded-lg">
+                            </div>
+                            <div class="md:w-2/3">
+                                <h3 class="text-2xl font-bold mb-2">Today - Thriving Community</h3>
+                                <p class="text-lg">Now home to 52 children and 30 elderly residents. Expanded facilities include classrooms, medical center, and organic farm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Residents -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-blue-600">Our Family</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="Children playing in the courtyard" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Children's Wing</h3>
+                        <p class="mb-4">52 children aged 2-18 years receive loving care, education, and preparation for independent living.</p>
+                        <ul class="space-y-2">
+                            <li>• Average 8 new admissions annually</li>
+                            <li>• 12 high school graduates this year</li>
+                            <li>• 5 currently in college with our support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="Elderly residents enjoying activities" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Elder Care</h3>
+                        <p class="mb-4">30 seniors aged 65-94 years find dignity and comfort in their golden years.</p>
+                        <ul class="space-y-2">
+                            <li>• Specialized care for dementia patients</li>
+                            <li>• Intergenerational activities daily</li>
+                            <li>• 24/7 medical supervision</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/600x400" alt="Staff member helping residents" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3">Our Caregivers</h3>
+                        <p class="mb-4">32 dedicated staff members create our loving community.</p>
+                        <ul class="space-y-2">
+                            <li>• 9 nurses</li>
+                            <li>• 4 teachers</li>
+                            <li>• 5 kitchen/housekeeping staff</li>
+                            <li>• 14 general caregivers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-blue-600">Our Mission & Vision</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="mission-card bg-blue-600 text-white p-8 rounded-xl shadow-lg transition duration-300">
+                    <h3 class="text-2xl font-bold mb-4">Mission</h3>
+                    <p class="mb-4">To provide abandoned children and elderly individuals with a loving home environment that nurtures their physical, emotional, and spiritual needs while preserving dignity and fostering independence.</p>
+                    <img src="https://placehold.co/600x400" alt="Group photo of children and elders together" class="rounded-lg">
+                </div>
+                
+                <div class="mission-card bg-blue-600 text-white p-8 rounded-xl shadow-lg transition duration-300">
+                    <h3 class="text-2xl font-bold mb-4">Vision</h3>
+                    <p class="mb-4">To expand our capacity to serve 100+ residents by 2025 while developing vocational training programs that prepare our youth for success and provide meaningful activities for our elders.</p>
+                    <img src="https://placehold.co/600x400" alt="Rendering of planned expansion buildings" class="rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-12 text-center text-blue-600">Moments of Joy</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Birthday celebration for 5-year-old Priya" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Grandfather Kumar teaching children to garden" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Diwali celebrations with lights and decorations" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Students receiving school supplies" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Art therapy class with seniors and children" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+                <div class="group overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://placehold.co/600x400" alt="Annual sports day competition" class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-700 text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Join Our Family</h2>
+            <p class="text-xl max-w-2xl mx-auto mb-8">Whether through volunteering, donations, or spreading awareness, you can help us continue this important work.</p>
+            <div class="space-x-4">
+                <a href="#" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-200">Donate Now</a>
+                <a href="#" class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-700 transition duration-200">Volunteer</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple animation for mission cards
+        document.querySelectorAll('.mission-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'scale(1.03)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

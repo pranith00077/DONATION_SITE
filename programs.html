@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Programs | Your NGO Name</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #006699;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .banner {
+      background: url('images/programs-banner.jpg') center/cover no-repeat;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .banner h1 {
+      font-size: 2.5rem;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .program-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s;
+    }
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+    .program-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .program-card h3 {
+      color: #006699;
+      margin-bottom: 0.5rem;
+    }
+    .program-card p {
+      margin-bottom: 1rem;
+    }
+    .program-card a {
+      color: #006699;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #004466;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Your NGO Name</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Our Programs</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <p>We work across various focus areas to create a lasting impact on underprivileged communities. Explore our key programs below:</p>
+
+    <div class="program-grid">
+      <div class="program-card">
+        <img src="images/education.jpg" alt="Education Program">
+        <h3>Education for All</h3>
+        <p>Ensuring access to quality education for children from underserved communities.</p>
+        <a href="education.html">Learn More →</a>
+      </div>
+
+      <div class="program-card">
+        <img src="images/disability.jpg" alt="Disability Inclusion">
+        <h3>Disability Inclusion</h3>
+        <p>Empowering persons with disabilities through education, training, and integration.</p>
+        <a href="disability.html">Learn More →</a>
+      </div>
+
+      <div class="program-card">
+        <img src="images/women.jpg" alt="Women Empowerment">
+        <h3>Women Empowerment</h3>
+        <p>Supporting women with skills training, SHGs, and income generation opportunities.</p>
+        <a href="women.html">Learn More →</a>
+      </div>
+
+      <div class="program-card">
+        <img src="images/health.jpg" alt="Health and Nutrition">
+        <h3>Health & Nutrition</h3>
+        <p>Providing medical camps, health education, and nutrition programs in rural areas.</p>
+        <a href="health.html">Learn More →</a>
+      </div>
+
+      <div class="program-card">
+        <img src="images/livelihoods.jpg" alt="Rural Livelihoods">
+        <h3>Rural Livelihoods</h3>
+        <p>Building sustainable livelihoods through skill-building and local job creation.</p>
+        <a href="livelihoods.html">Learn More →</a>
+      </div>
+
+      <div class="program-card">
+        <img src="images/environment.jpg" alt="Environment and Sustainability">
+        <h3>Environment & Sustainability</h3>
+        <p>Promoting eco-awareness, tree plantations, and clean energy initiatives.</p>
+        <a href="environment.html">Learn More →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your NGO Name. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

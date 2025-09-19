@@ -1,0 +1,433 @@
+       <div class="admin-wrapper">
+            <!-- Sidebar Navigation -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <h3> Admin</h3>
+                </div>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#dashboard" class="active" data-section="dashboardStatsSection"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="#donations" data-section="donations"><i class="fas fa-hand-holding-heart"></i> Donations</a></li>
+                        <li><a href="#campaigns" data-section="campaigns"><i class="fas fa-chart-line"></i> Campaigns</a></li>
+                        <li><a href="#addNews" data-section="addNewsSection"><i class="fas fa-newspaper"></i> News Articles</a></li>
+                        <li><a href="#addPublication" data-section="addPublicationSection"><i class="fas fa-book"></i> Notifications</a></li>
+                        <li><a href="#successStoriesSection" data-section="successStoriesSection"><i class="fas fa-trophy"></i> What we Do</a></li>
+                        <!-- NEW: Applications Link -->
+                        <li><a href="#applications" data-section="applicationsSection"><i class="fas fa-file-alt"></i> Applications</a></li>
+                        <!-- NEW: Photo Gallery Link -->
+                        <li><a href="#photoGallery" data-section="photoGallerySection"><i class="fas fa-images"></i> Photo Gallery</a></li>
+                        <li><a href="#export" data-section="export"><i class="fas fa-file-export"></i> Export Data</a></li>
+                        <li><a href="#settings" data-section="settingsSection"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="admin-main-content">
+                <header class="admin-header">
+                    <h1>Welcome, Admin!</h1>
+                    <div class="header-actions">
+                    </div>
+                </header>
+
+                <!-- Dashboard Stats Section -->
+                <section class="admin-section active" id="dashboardStatsSection">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard Overview</h2>
+                    <div class="stats-grid">
+                        <!-- Total Donors -->
+                        <div class="stat-card">
+                            <i class="fas fa-users icon-large"></i>
+                            <h3>Total Donors</h3>
+                            <p class="stat-number" id="totalDonors">Loading...</p>
+                        </div>
+
+                        <!-- Total Amount Donated -->
+                        <div class="stat-card">
+                            <i class="fas fa-rupee-sign icon-large"></i>
+                            <h3>Total ₹ Donated</h3>
+                            <p class="stat-number" id="totalAmount">Loading...</p>
+                        </div>
+
+                        <!-- Removed Active Campaigns -->
+                        <!-- Removed Most Supported Cause -->
+                    </div>
+                </section>
+
+                <!-- Donations Section -->
+                <section id="donations" class="admin-section">
+                    <h2><i class="fas fa-hand-holding-heart"></i> Track & Manage Donations</h2>
+                    <div class="filter-bar">
+                        <input type="text" placeholder="Search donations..." class="search-input">
+                        <!-- Removed Cause Filter Select -->
+                        <input type="date" class="filter-date">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Donor Name</th>
+                                    <th>Amount (₹)</th>
+                                    <th>Date</th>
+                                    <th>Transaction ID</th>
+                                    <th>Donor Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Donation data will be loaded dynamically here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Campaigns Section -->
+                <section id="campaigns" class="admin-section">
+                    <h2><i class="fas fa-chart-line"></i> Monitor Campaign Impact</h2>
+                    <div class="campaign-summary">
+                        <div class="summary-card">
+                            <h3>Campaign</h3>
+                            <p>Target: ₹ <span id="campaignTarget">1,000,000</span></p>
+                            <p>Raised: ₹ <span id="campaignRaised">0</span></p>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar" style="width: 0%;" id="campaignProgressBar">0%</div>
+                            </div>
+                            <p><span id="campaignAchievedPercentage">0</span>% Achieved</p>
+                        </div>
+                        
+                    </div>
+                    
+                </section>
+
+                <!-- Add News Section -->
+                <section id="addNewsSection" class="admin-section">
+                    <h2><i class="fas fa-newspaper"></i> Manage News Articles</h2>
+                    <p>Use the form below to add new news articles, or manage existing ones.</p>
+                    
+                    <form id="addNewsForm" enctype="multipart/form-data" class="styled-form">
+                        <h3>Add New Article</h3>
+                        <div class="form-group">
+                            <label for="newsTitle">Title:</label>
+                            <input type="text" id="newsTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsContent">Content:</label>
+                            <textarea id="newsContent" name="content" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsDate">Published Date:</label>
+                            <input type="date" id="newsDate" name="published_at" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsImage">Image:</label>
+                            <input type="file" id="newsImage" name="image" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Upload News</button>
+                    </form>
+
+                    <div class="item-list">
+                        <h3>Existing News Articles</h3>
+                        <div id="newsList">
+                            <!-- News articles will be loaded dynamically here -->
+                            <p>Loading news...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Add Publication Section -->
+                <section id="addPublicationSection" class="admin-section">
+                    <h2><i class="fas fa-book"></i> Manage Notifications</h2>
+                    <p>Use the form below to add new notifications.</p>
+                    
+                    <form id="addPublicationForm" enctype="multipart/form-data" method="post" class="styled-form">
+                        <h3>Add New Notifiction</h3>
+                        <div class="form-group">
+                            <label>Title:</label>
+                            <input type="text" name="title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description:</label>
+                            <textarea name="description" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Publish Date:</label>
+                            <input type="date" name="published_at" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload PDF File:</label>
+                            <input type="file" name="file" accept=".pdf" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Upload Cover Image:</label>
+                            <input type="file" name="cover_image" accept="image/*" required>
+                        </div>
+
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Upload Notification</button>
+                    </form>
+
+                    <div class="item-list">
+                        <h3>Existing Notifications</h3>
+                        <div id="publicationList">
+                            <!-- Publications will be loaded dynamically here -->
+                            <p>Loading notifications...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Stories Section (Renamed to What We Do for clarity based on sidebar) -->
+                <section id="storiesSection" class="admin-section">
+                    <h2><i class="fas fa-book-open"></i> Manage What We Do</h2>
+                    <p>Use the form below to add new "What We Do" items, or manage existing ones.</p>
+                    
+                    <form id="addStoryForm" enctype="multipart/form-data" class="styled-form">
+                        <h3>Add New Program/Initiative</h3>
+                        <div class="form-group">
+                            <label for="storyTitle">Title:</label>
+                            <input type="text" id="storyTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="storyContent">Description:</label>
+                            <textarea id="storyContent" name="content" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="storyImage">Image:</label>
+                            <input type="file" id="storyImage" name="image" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Add Program</button>
+                    </form>
+
+                    <div class="item-list">
+                        <h3>Existing Programs/Initiatives</h3>
+                        <div id="storiesList">
+                            <!-- Stories (What We Do) will be loaded dynamically here -->
+                            <p>Loading programs...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Success Stories Section -->
+                <section id="successStoriesSection" class="admin-section">
+                    <h2><i class="fas fa-trophy"></i> Manage Success Stories</h2>
+                    <p>Use the form below to add new success stories, or manage existing ones.</p>
+                    
+                    <form id="addSuccessStoryForm" enctype="multipart/form-data" class="styled-form">
+                        <h3>Add New Success Story</h3>
+                        <div class="form-group">
+                            <label for="successStoryTitle">Title:</label>
+                            <input type="text" id="successStoryTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="successStoryContent">Content:</label>
+                            <textarea id="successStoryContent" name="content" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="successStoryImage">Image:</label>
+                            <input type="file" id="successStoryImage" name="image" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Upload Success Story</button>
+                    </form>
+
+                    <div class="item-list">
+                        <h3>Existing Success Stories</h3>
+                        <div id="successStoriesList">
+                            <!-- Success Stories will be loaded dynamically here -->
+                            <p>Loading success stories...</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NEW: Applications Section -->
+                <section id="applicationsSection" class="admin-section">
+                    <h2><i class="fas fa-file-alt"></i> Manage Applications</h2>
+                    <div class="filter-bar">
+                        <input type="text" placeholder="Search applications..." class="search-input" id="applicationSearchInput">
+                        <input type="date" class="filter-date" id="applicationFilterDate">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Notification Title</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Location</th>
+                                    <th>Studying</th>
+                                    <th>Submitted At</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicationsTableBody">
+                                <!-- Application data will be loaded dynamically here -->
+                                <tr><td colspan="8">Loading applications...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- NEW: Photo Gallery Section -->
+                <section id="photoGallerySection" class="admin-section">
+                    <h2><i class="fas fa-images"></i> Manage Photo Gallery</h2>
+                    <p>Create new albums or add photos to existing ones.</p>
+                    
+                    <form id="addAlbumForm" enctype="multipart/form-data" class="styled-form">
+                        <h3>Create New Photo Album</h3>
+                        <div class="form-group">
+                            <label for="albumTitle">Album Title:</label>
+                            <input type="text" id="albumTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="albumDescription">Album Description:</label>
+                            <textarea id="albumDescription" name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="albumCoverImage">Album Cover Image:</label>
+                            <input type="file" id="albumCoverImage" name="cover_image" accept="image/*" required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-plus-circle"></i> Create Album</button>
+                    </form>
+
+                    <form id="addPhotosToAlbumForm" enctype="multipart/form-data" class="styled-form" style="margin-top: 30px;">
+                        <h3>Add Photos to Existing Album</h3>
+                        <div class="form-group">
+                            <label for="selectAlbum">Select Album:</label>
+                            <select id="selectAlbum" name="album_id" required>
+                                <option value="">Select Album</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="albumPhotos">Select Photos (Multiple):</label>
+                            <input type="file" id="albumPhotos" name="photos[]" accept="image/*" multiple required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Upload Photos to Album</button>
+                    </form>
+
+                    <div class="item-list">
+                        <h3>Existing Photo Albums</h3>
+                        <div id="albumList" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <!-- Albums will be loaded dynamically here -->
+                            <p>Loading albums...</p>
+                        </div>
+                    </div>
+                </section>
+
+
+                <!-- Export Data Section -->
+                <section id="export" class="admin-section">
+                    <h2><i class="fas fa-file-export"></i> Export Donation Data</h2>
+                    <p>Select criteria to export donation records.</p>
+                    <div class="export-options">
+                        <div class="form-group">
+                            <label for="exportStartDate">Start Date:</label>
+                            <input type="date" id="exportStartDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="exportEndDate">End Date:</label>
+                            <input type="date" id="exportEndDate">
+                        </div>
+                        <!-- Removed Export Cause Filter -->
+                        <div class="form-group">
+                            <label for="exportFormat">Format:</label>
+                            <select id="exportFormat">
+                                <option value="csv">CSV</option>
+                            </select>
+                        </div>
+                        <button class="btn donate-btn" id="triggerExportBtn"><i class="fas fa-download"></i> Export Data</button>
+                    </div>
+                </section>
+
+            
+
+                <!-- Settings Section -->
+                <section id="settingsSection" class="admin-section">
+                    <h2><i class="fas fa-cog"></i> General Settings</h2>
+                    <form id="settingsForm" enctype="multipart/form-data" class="styled-form" action="admin/settings.php" method="post">
+                        <h3>Upload Logo</h3>
+                        <div class="form-group">
+                            <label for="logoUpload">Select Logo Image:</label>
+                            <input type="file" id="logoUpload" name="logo" accept="image/*">
+                            <small>Recommended size: 200x200 pixels</small>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-upload"></i> Upload Logo</button>
+                    </form>
+
+                    <hr style="margin: 30px 0; border-color: var(--border-color);">
+
+                    <form id="targetSettingsForm" class="styled-form">
+                        <h3>Set Donation Target</h3>
+                        <div class="form-group">
+                            <label for="donationTarget">Annual Donation Target (₹):</label>
+                            <!-- MODIFICATION: Removed step="1000" -->
+                            <input type="number" id="donationTarget" name="target" min="0" required>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-save"></i> Save Target</button>
+                    </form>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- Donation Detail Modal -->
+        <div id="donationDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button donation-close-button">&times;</span>
+                <h3 id="modalDonationTitle"><i class="fas fa-info-circle"></i> Donation Details</h3>
+                <div id="modalDonationContent">
+                    <p><strong>Donor Name:</strong> <span id="detailDonorName"></span></p>
+                    <p><strong>Amount:</strong> ₹ <span id="detailAmount"></span></p>
+                    <!-- Removed Cause from modal -->
+                    <p><strong>Date:</strong> <span id="detailDate"></span></p>
+                    <p><strong>Payment Method:</strong> <span id="detailPaymentMethod"></span></p>
+                    <p><strong>Transaction ID:</strong> <span id="detailTransactionId"></span></p>
+                    <p><strong>Donor Email:</strong> <span id="detailDonorEmail"></span></p>
+                    <p><strong>Donor Phone:</strong> <span id="detailDonorPhone"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- News/Publication Delete Confirmation Modal -->
+        <div id="deleteConfirmModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button delete-close-button">&times;</span>
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirm Deletion</h3>
+                <p>Are you sure you want to delete this <strong id="deleteItemType"></strong>?</p>
+                <p><strong>Title:</strong> <span id="deleteItemTitle"></span></p>
+                <p><strong>Published Date:</strong> <span id="deleteItemDate"></span></p>
+                <div style="text-align: right; margin-top: 20px;">
+                    <button class="btn" id="cancelDeleteBtn" style="background-color: var(--accent-color); margin-right: 10px;">Cancel</button>
+                    <button class="btn delete-btn" id="confirmDeleteBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Application Detail Modal -->
+        <div id="applicationDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button application-close-button">&times;</span>
+                <h3 id="modalApplicationTitle"><i class="fas fa-info-circle"></i> Application Details</h3>
+                <div id="modalApplicationContent">
+                    <p><strong>Notification Title:</strong> <span id="detailApplicationNotificationId"></span></p>
+                    <p><strong>Name:</strong> <span id="detailApplicationName"></span></p>
+                    <p><strong>Email:</strong> <span id="detailApplicationEmail"></span></p>
+                    <p><strong>Phone Number:</strong> <span id="detailApplicationPhone"></span></p>
+                    <p><strong>Location:</strong> <span id="detailApplicationLocation"></span></p>
+                    <p><strong>Studying:</strong> <span id="detailApplicationStudying"></span></p>
+                    <p><strong>Message:</strong> <span id="detailApplicationMessage"></span></p>
+                    <p><strong>Submitted At:</strong> <span id="detailApplicationSubmittedAt"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Album Photos Modal -->
+        <div id="albumPhotosModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button album-photos-close-button">&times;</span>
+                <h3 id="modalAlbumTitle"><i class="fas fa-images"></i> Photos in Album: <span id="currentAlbumName"></span></h3>
+                <div id="albumPhotosContainer" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-height: 60vh; overflow-y: auto;">
+                    <!-- Album photos will be loaded dynamically here -->
+                </div>
+            </div>
+        </div>

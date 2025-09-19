@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Application Form</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Classic muted background: soft light gray */
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      max-width: 600px;
+      width: 90%;
+      padding: 30px 40px;
+      border-radius: 12px;
+      /* softer shadow for classic look */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #222;
+      font-weight: 700;
+      margin-bottom: 30px;
+      letter-spacing: 1.2px;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 12px 15px;
+      margin-top: 8px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background-color: #fafafa;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #555;
+      box-shadow: 0 0 6px rgba(85, 85, 85, 0.4);
+      background-color: #fff;
+    }
+
+    button {
+      background: #555;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      margin-top: 30px;
+      cursor: pointer;
+      border-radius: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(85, 85, 85, 0.3);
+    }
+
+    button:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(51, 51, 51, 0.5);
+    }
+
+    .success {
+      display: none;
+      color: #28a745;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      label {
+        font-size: 0.9rem;
+      }
+
+      input,
+      select {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 12px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Application Form</h1>
+    <form id="applicationForm" method="post" action="admin/application.php">
+      <label for="notification">Select Notification:</label>
+      <select id="notification" name="notification" required>
+        <option value="">Loading notifications...</option>
+      </select>
+
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your full name"
+        required
+      />
+
+      <label for="phone">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="9876543210"
+        pattern="[0-9]{10}"
+        required
+      />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required
+      />
+
+      <label for="location">Location:</label>
+      <input
+        type="text"
+        id="location"
+        name="location"
+        placeholder="City, State"
+        required
+      />
+
+      <label for="studying">Studying:</label>
+      <input
+        type="text"
+        id="studying"
+        name="studying"
+        placeholder="e.g., B.Tech 2nd Year"
+        required
+      />
+
+      <button type="submit">Submit Application</button>
+      <div class="success" id="successMessage">
+        ✅ Your application has been submitted!
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Load notifications from publications
+    fetch("admin/get_publications.php")
+      .then((res) => res.json())
+      .then((data) => {
+        const dropdown = document.getElementById("notification");
+        dropdown.innerHTML = '<option value="">-- Select Notification --</option>';
+
+        if (data.length > 0) {
+          data.forEach((pub) => {
+            const option = document.createElement("option");
+            option.value = pub.id; // assuming your PHP returns "id"
+            option.textContent = pub.title;
+            dropdown.appendChild(option);
+          });
+        } else {
+          dropdown.innerHTML = '<option value="">No notifications available</option>';
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load notifications:", err);
+        document.getElementById("notification").innerHTML =
+          '<option value="">Error loading notifications</option>';
+      });
+
+    // Handle application form submission
+    document
+      .getElementById("applicationForm")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        fetch("admin/application.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.success) {
+              document.getElementById("successMessage").style.display = "block";
+              this.reset();
+            } else {
+              alert(data.message);
+            }
+          })
+          .catch((err) => alert("Error submitting form"));
+      });
+  </script>
+</body>
+</html>

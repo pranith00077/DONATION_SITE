@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disability Inclusive Development | BOSS Foundation</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f4f4f4; /* Light background for contrast */
+}
+
+header {
+  background-color: #006699;
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav a:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+
+.banner {
+  background: url('images/disability-banner.jpg') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+  position: relative; /* For positioning overlay */
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+}
+
+.banner h1 {
+  font-size: 2.5rem;
+  z-index: 1; /* Ensure text is above overlay */
+}
+
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background: white; /* White background for content area */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: #006699;
+  border-bottom: 2px solid #006699; /* Underline for section titles */
+  padding-bottom: 0.5rem; /* Space between title and content */
+}
+
+.section img {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin-top: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s; /* Smooth zoom effect */
+}
+
+.section img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+footer {
+  background-color: #004466;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+a.button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #006699;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s; /* Smooth transition for hover effect */
+}
+
+a.button:hover {
+  background: #005577; /* Darker shade on hover */
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>BOSS Foundation</h1>
+    <nav>
+      <a href="index.php">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Disability Inclusive Development</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="section">
+      <h2>Empowering People with Disabilities</h2>
+      <p>
+        Our Disability Inclusive Development program aims to create equal opportunities for persons with disabilities (PwDs) through education, skill-building, and community integration.
+        We work to eliminate stigma and ensure full participation in society.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Key Initiatives</h2>
+      <ul>
+        <li>Early intervention and rehabilitation services</li>
+        <li>Inclusive education support in mainstream schools</li>
+        <li>Vocational training and job placements</li>
+        <li>Awareness and advocacy campaigns</li>
+      </ul>
+      <img src="images/dis.png" alt="Empowering Disability Program">
+    </div>
+
+    <div class="section">
+      <h2>Success Stories</h2>
+      <p>
+        Meet Anitha, a visually impaired student who graduated with honors through our support program. With access to learning tools and mentorship, she now leads workshops for others.
+      </p>
+      <img src="images/1753465040_sucesses pro.jpg" alt="Success Story">
+    </div>
+
+    <div class="section">
+      <h2>Partner With Us</h2>
+      <p>
+        We welcome partnerships with organizations, corporates, and individuals who want to make a difference. Reach out to us to volunteer, sponsor assistive devices, or support job placement drives.
+      </p>
+      <a href="donate.html" style="display: inline-block; margin-top: 1rem; background: #006699; color: white; padding: 0.75rem 1.5rem; border-radius: 5px; text-decoration: none;">
+        Support This Program
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

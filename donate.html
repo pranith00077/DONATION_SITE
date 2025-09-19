@@ -1,0 +1,233 @@
+<!-- donate.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate | BOSS Foundation</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: #f4f4f4;
+    }
+    header {
+      background-color: #006699;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .banner {
+      background: url('images/donate-banner.jpg') center/cover no-repeat;
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+    }
+    .banner h1 {
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h2 {
+      color: #006699;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .radio-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    .radio-group input {
+      width: auto;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #006699;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #004d66;
+    }
+    .impact {
+      margin-top: 2rem;
+      background: #e6f2ff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    footer {
+      background-color: #004466;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .thank-you-message {
+      display: none; /* Hidden by default */
+      text-align: center;
+      font-size: 2rem;
+      color: #006699;
+      margin-top: 2rem;
+    }
+    .bank-details {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #e6f2ff;
+      border-radius: 8px;
+    }
+    .qr-code {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .qr-code img {
+      width: 200px; /* Fixed width */
+      height: 200px; /* Fixed height to make it square */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>SRI GURU RAGHAVENDRA OLDAGE HOME</h1>
+  <nav>
+    <a href="index.php">Home</a>
+    <a href="about1.html">About</a>
+    <a href="donate.html">Donate</a>
+  </nav>
+</header>
+
+<!-- Banner -->
+<div class="banner">
+  <h1>Make a Difference Today</h1>
+</div>
+
+<!-- Donation Form -->
+<div class="container">
+  <div class="section" id="donationFormSection">
+    <h2>Choose Your Donation</h2>
+    <form id="donationForm" action="process_donation.php" method="post" onsubmit="return validateCustomAmount()">
+      <label>Donation Type:</label>
+      <div class="radio-group">
+        <label><input type="radio" name="donation_type" value="one_time" checked> One-Time</label>
+        <label><input type="radio" name="donation_type" value="monthly"> Monthly</label>
+      </div>
+
+      <label>Amount (in ₹):</label>
+      <select name="amount" id="amountSelect" onchange="toggleCustomAmount()">
+        <option value="500">₹500</option>
+        <option value="1000">₹1000</option>
+        <option value="2500">₹2500</option>
+        <option value="custom">Custom Amount</option>
+      </select>
+
+      <div id="customAmountField" style="display:none;">
+        <label>Enter Custom Amount (in ₹):</label>
+        <input type="number" id="customAmountInput" name="custom_amount" min="1" placeholder="Eg: 750">
+      </div>
+
+      <label>Full Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Phone:</label>
+      <input type="tel" name="phone" required>
+
+      <button type="submit">Proceed to Pay</button>
+    </form>
+  </div>
+
+  <!-- Thank You Message -->
+  <div class="thank-you-message" id="thankYouMessage">
+    Thank You for Your Donation!
+  </div>
+
+  <!-- Bank Details Section -->
+  <div class="bank-details">
+    <h2>Bank Details</h2>
+    <p>Bank: SBI</p>
+    <p>IFSC Code: SBIN0002723</p>
+    <p>Branch: JNTU</p>
+    <p>Account Number: 32823606112</p>
+  </div>
+
+  <!-- QR Code Section -->
+  <div class="qr-code">
+    <h2>Payment QR Code</h2>
+    <img src="images/qr.jpg" alt="Payment QR Code" />
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 . All Rights Reserved.</p>
+</footer>
+
+<!-- JavaScript for Custom Amount Handling -->
+<script>
+  function toggleCustomAmount() {
+    const amountSelect = document.getElementById('amountSelect');
+    const customField = document.getElementById('customAmountField');
+
+    if (amountSelect.value === 'custom') {
+      customField.style.display = 'block';
+    } else {
+      customField.style.display = 'none';
+    }
+  }
+
+  function validateCustomAmount() {
+    const amountSelect = document.getElementById('amountSelect');
+    const customAmountInput = document.getElementById('customAmountInput');
+
+    if (amountSelect.value === 'custom') {
+      const value = customAmountInput.value.trim();
+      if (!value || isNaN(value) || parseInt(value) < 1) {
+        alert('Please enter a valid custom amount');
+        customAmountInput.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+</script>
+
+</body>
+</html>

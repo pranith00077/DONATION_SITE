@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RDT Clone - Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #004d40;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #00695c;
+  padding: 10px;
+  border-radius: 4px;
+  min-width: 200px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.donate-btn {
+  background: #ff9800;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+/* Hero Section */
+.hero {
+  background: url('../assets/images/hero.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+/* Impact Section */
+.impact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.impact-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.stat h3 {
+  font-size: 32px;
+  color: #00796b;
+}
+
+/* Success Stories Section */
+.stories {
+  padding: 60px 20px;
+  background: #f1f1f1;
+  text-align: center;
+}
+
+.story-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.story-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+}
+
+.story-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+  background: #004d40;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="navbar">
+    <div class="logo">BOSS</div>
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">Our Work
+          <ul class="dropdown-menu">
+            <li><a href="work/disability.html">Disability Inclusive Development</a></li>
+            <li><a href="work/ecology.html">Ecology and Sustainable Livelihoods</a></li>
+            <li><a href="work/education.html">Education</a></li>
+            <li><a href="work/habitat.html">Habitat</a></li>
+            <li><a href="work/health.html">Rural Hospitals and Clinics</a></li>
+            <li><a href="work/sports.html">Sports for Development</a></li>
+            <li><a href="work/women.html">Women Development</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">BOSS
+          <ul class="dropdown-menu">
+            <li><a href="rdt/overview.html">BOSS at a Glance</a></li>
+            <li><a href="rdt/transparency.html">Transparency</a></li>
+            <li><a href="rdt/management.html">Management</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">Get Involved
+          <ul class="dropdown-menu">
+            <li><a href="involve/marathon.html">Anantapur Ultramarathon</a></li>
+            <li><a href="involve/corporate.html">Corporate Partnership</a></li>
+            <li><a href="involve/india4india.html">India for India</a></li>
+            <li><a href="involve/visit.html">Visit Anantapur</a></li>
+            <li><a href="involve/work.html">Work with Us</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">Media
+          <ul class="dropdown-menu">
+            <li><a href="media/news.html">News</a></li>
+            <li><a href="media/publications.html">Publications</a></li>
+            <li><a href="media/events.html">Events</a></li>
+          </ul>
+        </li>
+        <li><a class="donate-btn" href="donate.html">Donate Now</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Empowering Rural Communities</h1>
+      <p>Supporting them in their struggle to eradicate poverty, suffering and injustice.</p>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact">
+    <h2>Our Impact</h2>
+    <div class="impact-stats">
+      <div class="stat"><h3>3,500+</h3><p>Houses Built</p></div>
+      <div class="stat"><h3>30,000+</h3><p>Children Educated</p></div>
+      <div class="stat"><h3>250+</h3><p>Clinics Operated</p></div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="stories">
+    <h2>Success Stories</h2>
+    <div class="story-cards">
+      <div class="story-card">
+        <img src="assets/images/story1.jpg" alt="Story 1">
+        <h3>Story Title 1</h3>
+        <p>Short summary of success story goes here...</p>
+      </div>
+      <div class="story-card">
+        <img src="assets/images/story2.jpg" alt="Story 2">
+        <h3>Story Title 2</h3>
+        <p>Short summary of success story goes here...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div>
+        <h4>About Us</h4>
+        <p>We work with rural communities to transform lives and reduce inequality.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="media/news.html">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <p>Social media icons placeholder</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
